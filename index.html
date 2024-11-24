@@ -5,6 +5,7 @@
         <title>brainfuck interpreter</title>
         <script src="js/bf.js"></script>
         <link rel="stylesheet" href="css/ui.css">
+        <script>loadcode()</script>
     </head>
     <body>
         <div id="viewport">
@@ -24,5 +25,12 @@
         <button onclick="clearoutput()">Clear</button>
         <br>
         <textarea id="output" title="output" rows="10" cols="50" readonly></textarea>
+        <br><hr><br>
+        <p>出于网站运行需求, 我把Python代码转换成了JavaScript代码。</p>
+        <p>源码在这：</p>
+        <h3>Python</h3>
+        <textarea id="python-code" readonly></textarea>
+        <h3>JavaScript</h3>
+        <textarea id="js-code" readonly></textarea>
     </body>
 </html>
