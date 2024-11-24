@@ -28,9 +28,43 @@
         <p>出于网站运行需求, 我把Python代码转换成了JavaScript代码。</p>
         <p>源码在这：</p>
         <h3>Python</h3>
-        <textarea id="python-code" readonly></textarea>
+        <textarea id="python-code" cols="50" rows="35" readonly>def run(chars):
+    global mem, memPnt
+    codePnt = 0
+    while codePnt < len(chars):
+        match chars[codePnt]:
+            case '>':
+                if memPnt < len(chars):
+                    memPnt += 1
+                else:
+                    lg.warning('Out of bounds')
+            case '<':
+                if memPnt > 0:
+                    memPnt -= 1
+                else:
+                    lg.warning('Out of bounds')
+            case '+':
+                mem[memPnt] += 1
+            case '-':
+                mem[memPnt] -= 1
+            case'.':
+                print(chr(mem[memPnt]), end='')
+            case',':
+                mem[memPnt] = ord(input()[0])
+            case'[':
+                while mem[memPnt] == 0:
+                    codePnt += 1
+                    if chars[codePnt] == ']':
+                        break
+            case']':
+                while mem[memPnt] != 0:
+                    codePnt -= 1
+                    if chars[codePnt] == '[':
+                        break
+        codePnt += 1</textarea>
+        <p>仓库地址: <a href="https://github.com/JiangHongAiBianCheng/Brain-F-k-Interpreter">仓库地址</a></p>
         <h3>JavaScript</h3>
-        <textarea id="js-code" readonly>"function run(code) {
+        <textarea id="js-code" cols="50" rows="55" readonly>function run(code) {
     let codePnt = 0;
     let memPnt = 0;
     let output = '';
@@ -84,6 +118,6 @@
     codePnt++;
     }
     return output;
-}"</textarea>
+}</textarea>
     </body>
 </html>
