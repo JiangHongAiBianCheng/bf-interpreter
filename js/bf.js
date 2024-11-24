@@ -50,18 +50,16 @@ function run(code) {
         mem[memPnt] = input.charCodeAt(0);
         break;
         case '[':
-        while (mem[memPnt] === 0) {
-            codePnt++;
-            if (code[codePnt] === ']') {
-            break;
+        if (mem[memPnt] === 0){
+            while (code[codePnt] !== ']') {
+                codePnt++;
             }
         }
         break;
         case ']':
-        while (mem[memPnt] !== 0) {
-            codePnt--;
-            if (code[codePnt] === '[') {
-            break;
+        if (mem[memPnt] !== 0){
+            while (code[codePnt] !== '[') {
+                codePnt--;
             }
         }
         break;
