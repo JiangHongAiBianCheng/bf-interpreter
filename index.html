@@ -29,7 +29,8 @@
         <p>源码在这：</p>
         <h3>Python</h3>
         <textarea id="python-code" cols="50" rows="35" readonly>def run(chars):
-    global mem, memPnt
+    mem = [0] * 3000
+    memPnt = 0
     codePnt = 0
     while codePnt < len(chars):
         match chars[codePnt]:
